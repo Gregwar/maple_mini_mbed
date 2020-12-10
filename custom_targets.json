@@ -1,0 +1,40 @@
+{
+    "MAPLE_MINI": {
+        "inherits": [
+            "MCU_STM32_BAREMETAL"
+        ],
+        "core": "Cortex-M3",
+        "extra_labels_add": [
+            "STM32F1",
+            "STM32F103xB"
+        ],
+        "macros_add": [
+            "STM32F103xB",
+            "HSE_VALUE=8000000"
+        ],
+        "config": {
+            "clock_source": {
+                "help": "Mask value : USE_PLL_HSE_EXTC (SYSCLK=72 MHz) | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI (SYSCLK=64 MHz)",
+                "value": "USE_PLL_HSE_XTAL",
+                "macro_name": "CLOCK_SOURCE"
+            },
+            "clock_source_usb": {
+                "value": "1",
+                "macro_name": "CLOCK_SOURCE_USB"
+            }
+        },
+        "default_lib": "small",
+        "device_has_add": [
+            "CAN",
+            "SERIAL_ASYNCH",
+            "FLASH",
+            "USBDEVICE"
+        ],
+        "device_has_remove": [
+            "LPTICKER"
+        ],
+        "bootloader_supported": true,
+        "mbed_rom_start": "0x08005000",
+        "mbed_rom_size": "110592"
+    }
+}
