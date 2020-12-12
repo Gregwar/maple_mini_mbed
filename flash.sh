@@ -1,1 +1,0 @@
-./dfu-util -d 1EAF:0003 -a 1 -D ".pio/build/maple_mini/firmware.bin" -R
