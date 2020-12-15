@@ -1,2 +1,4 @@
 .pio
 .vscode/*
+dfu-util
+dfu-util.exe
