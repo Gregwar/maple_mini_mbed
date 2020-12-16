@@ -1,14 +1,14 @@
+import sys
 import os
 Import("env")
 
 uploader = '$UPLOADER'
-local_dfu = ['dfu-util', 'dfu-util.exe']
-for dfu in local_dfu:
-    if os.path.exists(dfu):
-        uploader = './'+dfu
+
+if sys.platform != 'win32' and os.path.exists('dfu-util'):
+    uploader = './dfu-util'
 
 # DFU util to program the Maple Mini
 env.Replace(
     UPLOADER='dfu-util',
-    UPLOADCMD=uploader+' -d 1EAF:0003 -a 1 -D $SOURCE -R'
+    UPLOADCMD=uploader+' -a 1 -D $SOURCE -R'
 )
