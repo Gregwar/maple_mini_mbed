@@ -1,7 +1,7 @@
 {
     "MAPLE_MINI": {
         "inherits": [
-            "MCU_STM32_BAREMETAL"
+            "MCU_STM32"
         ],
         "core": "Cortex-M3",
         "extra_labels_add": [
